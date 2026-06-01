@@ -1,0 +1,263 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include gtm.html %}
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="https://oceansidehairsalon.com/myfavicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/myfavicon/favicon.svg" />
+    <link rel="shortcut icon" href="/myfavicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/myfavicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/myfavicon/site.webmanifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+
+    <title>Successfully Unsubscribed | Oceanside Grooming Guide</title>
+    <meta name="description" content="You have been successfully unsubscribed from the Oceanside Grooming newsletter.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    
+    <style>
+        :root {
+            --primary-color: #005f73;
+            --secondary-color: #0a9396;
+            --accent-color: #e9d8a6;
+            --bg-light: #f4f7f6;
+            --text-dark: #333;
+            --text-muted: #666;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
+            --white: #ffffff;
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            line-height: 1.7;
+            background: var(--bg-light);
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            color: var(--primary-color);
+        }
+
+        /* Hero / Header */
+        header {
+            background: linear-gradient(135deg, rgba(0, 95, 115, 0.9), rgba(10, 147, 150, 0.8)), 
+                        url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 35vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 120px 20px 60px;
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: linear-gradient(to top, var(--bg-light), transparent);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            max-width: 900px;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            animation: fadeInDown 0.8s ease;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 750px;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 0.8s ease 0.2s;
+            animation-fill-mode: both;
+        }
+
+        /* Content Card */
+        .confirm-container {
+            max-width: 700px;
+            margin: -40px auto 5rem;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            flex-grow: 1;
+        }
+
+        .confirm-card {
+            background: var(--white);
+            padding: 50px 40px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(10, 147, 150, 0.08);
+            text-align: center;
+            animation: fadeInUp 0.8s ease 0.3s;
+            animation-fill-mode: both;
+        }
+
+        /* Success Checkmark Animation */
+        .success-icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background: #fef2f2;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            border: 2px solid #fecaca;
+        }
+
+        .success-icon {
+            width: 40px;
+            height: 40px;
+            color: #dc2626;
+        }
+
+        .confirm-card h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .confirm-card p.success-intro {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        /* Action Buttons */
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .primary-btn {
+            background: var(--secondary-color);
+            color: white;
+            padding: 16px 24px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            font-weight: 900;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(10, 147, 150, 0.2);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .primary-btn:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 95, 115, 0.3);
+        }
+
+        .secondary-btn {
+            background: transparent;
+            color: var(--primary-color);
+            padding: 14px 24px;
+            border: 2px solid var(--primary-color);
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .secondary-btn:hover {
+            background: #f0f9fa;
+            color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.2rem; }
+            header { padding-top: 100px; padding-bottom: 40px; }
+            .confirm-card { padding: 35px 20px; }
+            .confirm-card h2 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+    {% include navbar.html %}
+
+    <header>
+        <h1>We're Sorry to See You Go</h1>
+        <p>Your email subscription has been updated.</p>
+    </header>
+
+    <main class="confirm-container">
+        <div class="confirm-card">
+            <div class="success-icon-wrapper">
+                <!-- An unsubscribe icon (user with a minus or dash indicator) -->
+                <svg class="success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="8.5" cy="7" r="4" />
+                    <line x1="23" y1="11" x2="17" y2="11" />
+                </svg>
+            </div>
+
+            <h2>Successfully Unsubscribed</h2>
+            <p class="success-intro">
+                You have been successfully removed from our mailing list. You will no longer receive weekly digests or guides from the Oceanside Grooming Guide.
+            </p>
+
+            <div class="btn-group">
+                <a href="/" class="primary-btn">Resubscribe (If this was a mistake)</a>
+                <a href="https://oceansidehairsalon.com/" class="secondary-btn">Visit Our Website</a>
+            </div>
+        </div>
+    </main>
+
+    {% include footer.html %}
+
+</body>
+
+</html>
